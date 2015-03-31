@@ -5,5 +5,8 @@
     angular
         .module('formApp.core')
         .constant('toastr', toastr)
-        .constant('_', _);
+        .constant('_', _)
+        .constant('restConfig', {
+            url: 'http://localhost:1337/api/'
+        });
 })();

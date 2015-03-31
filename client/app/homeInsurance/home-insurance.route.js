@@ -11,20 +11,24 @@
             .state('form', {
                 url: '/form',
                 templateUrl: 'app/homeInsurance/form.html',
-                controller: 'HomeInsuranceController as vm'
-
+                controller: 'HomeInsuranceFormController as vm'
             })
             .state('form.user', {
                 url: '/user',
-                templateUrl: 'app/homeInsurance/formUser.html'
+                templateUrl: 'app/homeInsurance/form-user.html'
             })
             .state('form.propertyFirst', {
                 url: '/propertyFirst',
-                templateUrl: 'app/homeInsurance/formPropertyFirst.html'
+                templateUrl: 'app/homeInsurance/form-property-first.html'
             })
             .state('form.propertySecond', {
                 url: '/propertySecond',
-                templateUrl: 'app/homeInsurance/formPropertySecond.html'
+                templateUrl: 'app/homeInsurance/form-property-second.html'
+            })
+            .state('summarize', {
+                url: '/summarize/:userId',
+                templateUrl: 'app/homeInsurance/summarize.html',
+                controller: 'HomeInsuranceSummarizeController as vm'
             });
 
         $urlRouterProvider.otherwise('/form/user');

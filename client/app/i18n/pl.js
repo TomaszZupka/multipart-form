@@ -36,7 +36,14 @@
             LONG_TERM_UNOCCUPIED: 'Czy nieruchomość na długi okres pozostaje opuszczona',
             SHORT_TERM_UNOCCUPIED: 'Czy nieruchomość w ciągu dnia pozostaje opuszczona',
             FORM_END_THANKS: 'Dziękujemy za poświęcony czas',
-            SUBMIT: 'Wyślij'
+            SUBMIT: 'Wyślij',
+            ERROR_SERVER_CONNECTION: 'Problem połączenia z serwerem',
+            FORM_SENDING_TITLE: 'Wysyłka formularza',
+            FORM_SENDING_SUCCESS: 'Wysyłka formularza zakończona sukcesem: {{msg}}',
+            FORM_SENDING_ERROR: 'Wysyłka formularza zakończona niepowodzeniem: {{msg}}',
+            FORM_RECEIVING_TITLE: 'Pobranie formularza',
+            FORM_RECEIVING_SUCCESS: 'Pobranie formularza zakończona sukcesem',
+            FORM_RECEIVING_ERROR: 'Pobranie formularza zakończona niepowodzeniem: {{msg}}'
         });
     }
 })();
