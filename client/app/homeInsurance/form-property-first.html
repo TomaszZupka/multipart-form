@@ -4,12 +4,14 @@
     <div class="col-sm-9">
         <div id="propertyType" class="radio-inline" ng-repeat="propertyType in vm.selectOptions.PROPERTY_TYPE">
             <label>
-                <input type="radio" ng-model="vm.formData.propertyType" value="{{propertyType.value}}" required checked>
+                <input type="radio" name="propertyType" ng-model="vm.formData.propertyType"
+                       value="{{propertyType.value}}"
+                       required checked>
                 {{propertyType.label}}
             </label>
         </div>
         <div class="form-errors"
-             ng-show="homeInsurance.propertyType.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.propertyType.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.propertyType.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -26,7 +28,7 @@
                required>
 
         <div class="form-errors"
-             ng-show="homeInsurance.builtYear.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.builtYear.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.builtYear.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -43,7 +45,7 @@
                ng-model="vm.formData.bedroomsNum">
 
         <div class="form-errors"
-             ng-show="homeInsurance.bedroomsNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.bedroomsNum.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.bedroomsNum.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -60,7 +62,7 @@
                ng-model="vm.formData.bathroomsNum">
 
         <div class="form-errors"
-             ng-show="homeInsurance.bathroomsNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.bathroomsNum.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.bathroomsNum.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -73,13 +75,14 @@
     <div class="col-sm-9">
         <div id="ownershipType" class="radio-inline" ng-repeat="ownershipType in vm.selectOptions.OWNERSHIP_TYPE">
             <label>
-                <input type="radio" ng-model="vm.formData.ownershipType" value="{{ownershipType.value}}"
+                <input type="radio" name="ownershipType" ng-model="vm.formData.ownershipType"
+                       value="{{ownershipType.value}}"
                        required checked>
                 {{ownershipType.label}}
             </label>
         </div>
         <div class="form-errors"
-             ng-show="homeInsurance.ownershipType.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.ownershipType.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.ownershipType.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -88,8 +91,7 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-        <div class="btn btn-block btn-info" ng-click="vm.nextStep('form.propertyFirst')">
-            <!--ui-sref="form.propertySecond"-->
+        <div class="btn btn-block btn-info" ng-click="vm.nextStep(vm.steps.current)">
             {{'NEXT_SECTION' | translate}} <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </div>
     </div>

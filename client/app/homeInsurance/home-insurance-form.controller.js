@@ -43,7 +43,8 @@
                 },
                 'form.propertySecond': {
                     submitted: false
-                }
+                },
+                current: 'form.user'
             };
         }
 
@@ -52,13 +53,15 @@
         }
 
         function processForm() {
-            var messageTitle = $filter('translate')('FORM_SENDING_TITLE');
-            HomeInsuranceService.saveUserForm(vm.fomrData).then(function (data) {
-                toastr.success($filter('translate')('FORM_SENDING_SUCCESS', {msg: JSON.stringify(data)}), messageTitle);
-                $state.go('summarize', {userId: data.userId});
-            }, function (error) {
-                toastr.error($filter('translate')('FORM_SENDING_ERROR', {msg: JSON.stringify(error)}), messageTitle);
-            });
+            if (vm.form.$valid) {
+                var messageTitle = $filter('translate')('FORM_SENDING_TITLE');
+                HomeInsuranceService.saveUserForm(vm.formData).then(function (data) {
+                    toastr.success($filter('translate')('FORM_SENDING_SUCCESS', {msg: JSON.stringify(data)}), messageTitle);
+                    $state.go('summarize', {userId: data.userId});
+                }, function (error) {
+                    toastr.error($filter('translate')('FORM_SENDING_ERROR', {msg: JSON.stringify(error)}), messageTitle);
+                });
+            }
         }
 
         function nextStep(currentStep) {
@@ -69,7 +72,9 @@
         }
 
         function resolveNextStep(currentStep) {
-            return vm.steps[currentStep].nextStep;
+            var nextStep = vm.steps[currentStep].nextStep;
+            vm.steps.current = nextStep;
+            return nextStep;
         }
 
         function submitStep(currentStep) {

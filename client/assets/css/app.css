@@ -163,3 +163,10 @@ input[type='checkbox'] {
 .form-errors .form-error.ng-enter.ng-enter-active {
     opacity: 1;
 }
+
+.summarize-container {
+    background: #2f2f2f;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}

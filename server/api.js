@@ -23,10 +23,10 @@ router.route('/users')
     })
     .post(function (req, res) {
         var user = new models.User({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            date_of_birth: req.body.dateOfBirth,
-            martial_status: req.body.martialStatus,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            date_of_birth: req.body.date_of_birth,
+            martial_status: req.body.martial_status,
             email: req.body.email
         });
         user.save(function (err) {
@@ -65,16 +65,16 @@ router.route('/users/:user_id/properties')
     .post(function (req, res) {
         var property = new models.Property({
             user_id: req.params.user_id,
-            property_type: req.body.propertyType,
-            built_year: req.body.builtYear,
-            bedrooms_num: req.body.bedroomsNum,
-            bathrooms_num: req.body.bathroomsNum,
-            ownership_type: req.body.ownershipType,
-            adults_num: req.body.adultsNum,
-            children_num: req.body.childrenNum,
+            property_type: req.body.property_type,
+            built_year: req.body.built_year,
+            bedrooms_num: req.body.bedrooms_num,
+            bathrooms_num: req.body.bathrooms_num,
+            ownership_type: req.body.ownership_type,
+            adults_num: req.body.adults_num,
+            children_num: req.body.children_num,
             smokers: req.body.smokers || false,
-            long_term_unoccupied: req.body.longTermUnoccupied || false,
-            short_term_unoccupied: req.body.shortTermUnoccupied || false
+            long_term_unoccupied: req.body.long_term_unoccupied || false,
+            short_term_unoccupied: req.body.short_term_unoccupied || false
         });
         property.save(function (err) {
             if (err) {

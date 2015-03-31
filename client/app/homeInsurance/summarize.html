@@ -1,9 +1,9 @@
-<div class="summarize-container">
+<div class="col-sm-8 col-sm-offset-2 summarize-container">
     <div class="row" ng-repeat="item in vm.fomrSummary.metaData">
-        <div ng-class="{'col-sm-3': !item.inverted, 'col-sm-9': !item.inverted}" translate>
-            {{item.label}}
+        <div ng-class="{'col-sm-3': !item.inverted, 'col-sm-9': item.inverted}" translate>
+            {{item.label}}:
         </div>
-        <div ng-class="{'col-sm-9': !item.inverted, 'col-sm-3': !item.inverted}">
+        <div ng-class="{'col-sm-9': !item.inverted, 'col-sm-3': item.inverted}" translate>
             {{vm.fomrSummary.data[item.field]}}
         </div>
     </div>

@@ -3,7 +3,7 @@
 
     var core = angular.module('formApp.core'),
         config = {
-            appErrorPrefix: '[Liberty Demo Error] ', //Configure the exceptionHandler decorator  // TODO - sprawdzic to!
+            appErrorPrefix: '[Liberty Demo Error] ',
             appTitle: 'Liberty Demo',
             version: '1.0.0'
         };

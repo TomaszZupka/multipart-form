@@ -8,7 +8,7 @@
                ng-model="vm.formData.adultsNum">
 
         <div class="form-errors"
-             ng-show="homeInsurance.adultsNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.adultsNum.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.adultsNum.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -25,7 +25,7 @@
                ng-model="vm.formData.childrenNum">
 
         <div class="form-errors"
-             ng-show="homeInsurance.childrenNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.childrenNum.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.childrenNum.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>

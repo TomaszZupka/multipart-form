@@ -5,7 +5,7 @@
         <input type="text" class="form-control" id="firstName" name="firstName" required
                ng-model="vm.formData.firstName">
         <div class="form-errors"
-             ng-show="homeInsurance.firstName.$error && (vm.steps['form.user'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.firstName.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.firstName.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -19,7 +19,7 @@
         <input type="text" class="form-control" id="lastName" name="lastName" required
                ng-model="vm.formData.lastName">
         <div class="form-errors"
-             ng-show="homeInsurance.lastName.$error && (vm.steps['form.user'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.lastName.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.lastName.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -33,7 +33,7 @@
         <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required
                ng-model="vm.formData.dateOfBirth">
         <div class="form-errors"
-             ng-show="homeInsurance.dateOfBirth.$error && (vm.steps['form.user'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.dateOfBirth.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.dateOfBirth.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -50,7 +50,7 @@
                     value="{{martialStatus.value}}">{{martialStatus.label}}</option>
         </select>
         <div class="form-errors"
-             ng-show="homeInsurance.martialStatus.$error && (vm.steps['form.user'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.martialStatus.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.martialStatus.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -64,7 +64,7 @@
         <input type="email" class="form-control" id="email" name="email" required
                ng-model="vm.formData.email">
         <div class="form-errors"
-             ng-show="homeInsurance.email.$error && (vm.steps['form.user'].submitted || homeInsurance.$submitted)"
+             ng-show="homeInsurance.email.$error && (vm.steps[vm.steps.current].submitted || homeInsurance.$submitted)"
              ng-messages="homeInsurance.email.$error"
              ng-messages-include="templates/register-form-errors.html">
         </div>
@@ -73,7 +73,7 @@
 
 <div class="form-group row">
     <div class="col-xs-6 col-xs-offset-3">
-        <div class="btn btn-block btn-info" ng-click="vm.nextStep('form.user')"> <!--ui-sref="form.propertyFirst"-->
+        <div class="btn btn-block btn-info" ng-click="vm.nextStep(vm.steps.current)">
             {{'NEXT_SECTION' | translate}} <span class="glyphicon glyphicon-circle-arrow-right"></span>
         </div>
     </div>
