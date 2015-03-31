@@ -43,7 +43,11 @@
             FORM_SENDING_ERROR: 'Wysyłka formularza zakończona niepowodzeniem: {{msg}}',
             FORM_RECEIVING_TITLE: 'Pobranie formularza',
             FORM_RECEIVING_SUCCESS: 'Pobranie formularza zakończona sukcesem',
-            FORM_RECEIVING_ERROR: 'Pobranie formularza zakończona niepowodzeniem: {{msg}}'
+            FORM_RECEIVING_ERROR: 'Pobranie formularza zakończona niepowodzeniem: {{msg}}',
+            ERROR_MESSAGE_REQUIRED: 'Pole jest wymagane.',
+            ERROR_MESSAGE_EMAIL: 'Pole musi być prawidłowym adresem email.',
+            ERROR_MESSAGE_MIN: 'Pole musi mieć wartość co najmniej {{msg}}.',
+            ERROR_MESSAGE_PATTERN_YEAR: 'Pole musi przedstawiać prawidłowy rok.'
         });
     }
 })();

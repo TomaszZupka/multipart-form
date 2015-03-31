@@ -79,9 +79,9 @@
             ownership_type: property.ownershipType,
             adults_num: property.adultsNum,
             children_num: property.childrenNum,
-            smokers: property.smokers,
-            long_term_unoccupied: property.longTermUnoccupied,
-            short_term_unoccupied: property.shortTermUnoccupied
+            smokers: property.smokers || false,
+            long_term_unoccupied: property.longTermUnoccupied || false,
+            short_term_unoccupied: property.shortTermUnoccupied || false
         };
     }
 
@@ -94,9 +94,9 @@
             ownershipType: property.ownership_type,
             adultsNum: property.adults_num,
             childrenNum: property.children_num,
-            smokers: property.smokers,
-            longTermUnoccupied: property.long_term_unoccupied,
-            shortTermUnoccupied: property.short_term_unoccupied
+            smokers: property.smokers || false,
+            longTermUnoccupied: property.long_term_unoccupied || false,
+            shortTermUnoccupied: property.short_term_unoccupied || false
         };
     }
 })();

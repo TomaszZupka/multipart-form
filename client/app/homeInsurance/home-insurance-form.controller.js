@@ -9,10 +9,14 @@
     function HomeInsuranceFormController(HomeInsuranceService, homeInsuranceOptions, $filter, $state, _) {
         var vm = this;
 
-        vm.fomrData = {};
+        vm.formData = {};
         vm.selectOptions = {};
+        vm.form = null;
+        vm.steps = null;
 
+        vm.setForm = setForm;
         vm.processForm = processForm;
+        vm.nextStep = nextStep;
 
         activate();
 
@@ -28,6 +32,23 @@
                     });
                 }
             );
+            vm.steps = {
+                'form.user': {
+                    submitted: false,
+                    nextStep: 'form.propertyFirst'
+                },
+                'form.propertyFirst': {
+                    submitted: false,
+                    nextStep: 'form.propertySecond'
+                },
+                'form.propertySecond': {
+                    submitted: false
+                }
+            };
+        }
+
+        function setForm(form) {
+            vm.form = form;
         }
 
         function processForm() {
@@ -38,6 +59,21 @@
             }, function (error) {
                 toastr.error($filter('translate')('FORM_SENDING_ERROR', {msg: JSON.stringify(error)}), messageTitle);
             });
+        }
+
+        function nextStep(currentStep) {
+            submitStep(currentStep);
+            if (vm.form.$valid) {
+                $state.go(resolveNextStep(currentStep));
+            }
+        }
+
+        function resolveNextStep(currentStep) {
+            return vm.steps[currentStep].nextStep;
+        }
+
+        function submitStep(currentStep) {
+            vm.steps[currentStep].submitted = true;
         }
     }
 })();

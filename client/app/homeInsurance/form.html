@@ -1,3 +1,10 @@
+<script id="templates/register-form-errors.html" type="text/ng-template">
+    <div class="form-error" ng-message="required">{{ 'ERROR_MESSAGE_REQUIRED' | translate }}</div>
+    <div class="form-error" ng-message="pattern">{{ 'ERROR_MESSAGE_PATTERN_YEAR' | translate }}</div>
+    <div class="form-error" ng-message="email">{{ 'ERROR_MESSAGE_EMAIL' | translate }}</div>
+    <div class="form-error" ng-message="min">{{ 'ERROR_MESSAGE_MIN' | translate: {msg: 0} }}</div>
+</script>
+
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
         <div id="form-container">
@@ -18,9 +25,11 @@
             </div>
 
             <!-- use ng-submit to catch the form submission and use our Angular function -->
-            <form class="form-horizontal" id="signup-form" ng-submit="vm.processForm()">
+            <form name="homeInsurance" class="form-horizontal" id="signup-form" ng-submit="vm.processForm()"
+
+                  novalidate>
                 <!-- our nested state views will be injected here -->
-                <div id="form-views" ui-view></div>
+                <div id="form-views" ng-init="vm.setForm(homeInsurance)" ui-view></div>
             </form>
         </div>
 

@@ -4,7 +4,14 @@
     <div class="col-sm-9">
         <input type="number" class="form-control" id="adultsNum" name="adultsNum"
                min="0"
+               required
                ng-model="vm.formData.adultsNum">
+
+        <div class="form-errors"
+             ng-show="homeInsurance.adultsNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-messages="homeInsurance.adultsNum.$error"
+             ng-messages-include="templates/register-form-errors.html">
+        </div>
     </div>
 </div>
 
@@ -14,7 +21,14 @@
     <div class="col-sm-9">
         <input type="number" class="form-control" id="childrenNum" name="childrenNum"
                min="0"
+               required
                ng-model="vm.formData.childrenNum">
+
+        <div class="form-errors"
+             ng-show="homeInsurance.childrenNum.$error && (vm.steps['form.propertyFirst'].submitted || homeInsurance.$submitted)"
+             ng-messages="homeInsurance.childrenNum.$error"
+             ng-messages-include="templates/register-form-errors.html">
+        </div>
     </div>
 </div>
 
@@ -47,6 +61,7 @@
 
 <div class="text-center">
     <span class="glyphicon glyphicon-heart"></span>
+
     <h3 translate>FORM_END_THANKS</h3>
 
     <button type="submit" class="btn btn-danger" translate>SUBMIT</button>

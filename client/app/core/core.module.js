@@ -5,7 +5,7 @@
         /*
          * Angular modules
          */
-        'ngAnimate', 'ui.router', 'pascalprecht.translate', 'restangular',
+        'ngAnimate', 'ui.router', 'pascalprecht.translate', 'restangular', 'ngMessages',
         /*
          * Our reusable cross app code modules
          */

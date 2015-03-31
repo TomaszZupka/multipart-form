@@ -72,9 +72,9 @@ router.route('/users/:user_id/properties')
             ownership_type: req.body.ownershipType,
             adults_num: req.body.adultsNum,
             children_num: req.body.childrenNum,
-            smokers: req.body.smokers,
-            long_term_unoccupied: req.body.longTermUnoccupied,
-            short_term_unoccupied: req.body.shortTermUnoccupied
+            smokers: req.body.smokers || false,
+            long_term_unoccupied: req.body.longTermUnoccupied || false,
+            short_term_unoccupied: req.body.shortTermUnoccupied || false
         });
         property.save(function (err) {
             if (err) {
