@@ -16,15 +16,15 @@
             })
             .state('form.user', {
                 url: '/user',
-                templateUrl: 'app/homeInsurance/form-user.html'
+                templateUrl: 'app/homeInsurance/formUser.html'
             })
             .state('form.propertyFirst', {
                 url: '/propertyFirst',
-                templateUrl: 'app/homeInsurance/form-property-first.html'
+                templateUrl: 'app/homeInsurance/formPropertyFirst.html'
             })
             .state('form.propertySecond', {
                 url: '/propertySecond',
-                templateUrl: 'app/homeInsurance/form-property-second.html'
+                templateUrl: 'app/homeInsurance/formPropertySecond.html'
             });
 
         $urlRouterProvider.otherwise('/form/user');
