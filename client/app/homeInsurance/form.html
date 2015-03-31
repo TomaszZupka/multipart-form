@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div id="form-container">
+            <div class="page-header text-center">
+                <h2 translate>HOME_INSURANCE</h2>
+
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".user">
+                        <span>1</span>{{'USER_PROFILE_INFORMATION' | translate}}
+                    </a>
+                    <a ui-sref-active="active" ui-sref=".propertyFirst">
+                        <span>2</span>{{'PROPERTY_INFORMATION_FIRST' | translate}}
+                    </a>
+                    <a ui-sref-active="active" ui-sref=".propertySecond">
+                        <span>3</span>{{'PROPERTY_INFORMATION_LAST' | translate}}
+                    </a>
+                </div>
+            </div>
+
+            <!-- use ng-submit to catch the form submission and use our Angular function -->
+            <form class="form-horizontal" id="signup-form" ng-submit="vm.processForm()">
+                <!-- our nested state views will be injected here -->
+                <div id="form-views" ui-view></div>
+            </form>
+        </div>
+
+        <!-- show our formData as it is being typed -->
+        <!-- TODO - for test issue -->
+        <pre>{{ vm.formData }}</pre>
+
+    </div>
+</div>

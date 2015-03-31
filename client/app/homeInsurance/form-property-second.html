@@ -1,0 +1,53 @@
+<div class="form-group">
+    <label class="col-sm-3 control-label" for="adultsNum" translate>ADULTS_NUM</label>
+
+    <div class="col-sm-9">
+        <input type="number" class="form-control" id="adultsNum" name="adultsNum"
+               min="0"
+               ng-model="vm.formData.adultsNum">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-3 control-label" for="childrenNum" translate>CHILDREN_NUM</label>
+
+    <div class="col-sm-9">
+        <input type="number" class="form-control" id="childrenNum" name="childrenNum"
+               min="0"
+               ng-model="vm.formData.childrenNum">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-9 control-label" for="smokers" translate>SMOKERS</label>
+
+    <div class="col-sm-3">
+        <input type="checkbox" id="smokers" name="smokers"
+               ng-model="vm.formData.smokers" value="true">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-9 control-label" for="longTermUnoccupied" translate>LONG_TERM_UNOCCUPIED</label>
+
+    <div class="col-sm-3">
+        <input type="checkbox" id="longTermUnoccupied" name="longTermUnoccupied"
+               ng-model="vm.formData.longTermUnoccupied" value="true">
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-9 control-label" for="shortTermUnoccupied" translate>SHORT_TERM_UNOCCUPIED</label>
+
+    <div class="col-sm-3">
+        <input type="checkbox" id="shortTermUnoccupied" name="shortTermUnoccupied"
+               ng-model="vm.formData.shortTermUnoccupied" value="true">
+    </div>
+</div>
+
+<div class="text-center">
+    <span class="glyphicon glyphicon-heart"></span>
+    <h3 translate>FORM_END_THANKS</h3>
+
+    <button type="submit" class="btn btn-danger" translate>SUBMIT</button>
+</div>
